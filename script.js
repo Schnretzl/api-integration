@@ -1,5 +1,11 @@
-document.getElementById('searchBtn').addEventListener('click', function() {
+document.getElementById('searchBtn').addEventListener('click', function(event) {
     let searchInput = document.getElementById('search').value;
+    if (searchInput.trim() === "") {
+        event.preventDefault();
+        alert("Please enter a Pokemon name or ID to search for.");
+        return;
+    }
+
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`)
     .then(response => response.json())
     .then(data => {
