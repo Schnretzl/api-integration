@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charizard Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="charizardscript.js" defer></script>
+</head>
+<body class="bg-danger">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 my-4">
+                <a href="index.html">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="PokeAPI Logo" class="img-fluid mx-auto d-block">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Charizard Details</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id="pokemonInfo" class="mt-4">
+                            <div class="row">
+                                <div class="col-md-6 order-first">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h3 id="pokemonName"></h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="pokemonId"></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="pokemonType"></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="pokemonType2"></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="pokemonHeight"></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="pokemonWeight"></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="pokemonAbilities"></p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6 order-sm-first d-flex justify-content-center align-items-center">
+                                    <img id="pokemonImg" class="img-fluid w-100 h-100" alt="Pokémon Image" style="object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
