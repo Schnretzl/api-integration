@@ -2,12 +2,17 @@ document.getElementById('searchBtn').addEventListener('click', function(event) {
     let searchInput = document.getElementById('search').value;
     if (searchInput.trim() === "") {
         event.preventDefault();
-        alert("Please enter a Pokemon name or ID to search for.");
+        alert("Please enter a Pokémon name or ID to search for.");
         return;
     }
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`)
-    .then(response => response.json())
+    fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput.toLowerCase()}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Pokémon not found');
+        }
+        return response.json();
+    })
     .then(data => {
         console.log(data);
         document.getElementById('pokemonImg').src = data.sprites.front_default;
@@ -29,7 +34,10 @@ document.getElementById('searchBtn').addEventListener('click', function(event) {
         abilities = abilities.join(', ');
         document.getElementById('pokemonAbilities').innerHTML = 'Abilities: ' + abilities;
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+        console.error(error);
+        alert('Pokémon not found. Please try again.');
+    });
 });
 
 document.getElementById('search').addEventListener('keypress', function(e) {
